@@ -1,0 +1,60 @@
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- START FOOTER -->
+<footer class="page-footer">
+    <div class="footer-copyright">
+        <div class="container">
+            <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
+            <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+
+
+
+<!-- ================================================
+Scripts
+================================================ -->
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="{{asset('materialize/js/plugins/jquery-1.11.2.min.js')}}"></script>
+<!--materialize js-->
+<script type="text/javascript" src="{{asset('materialize/js/materialize.js')}}"></script>
+<!--prism-->
+<script type="text/javascript" src="{{asset('materialize/js/plugins/prism/prism.js')}}"></script>
+<!--scrollbar-->
+<script type="text/javascript" src="{{asset('materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+
+<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+<script type="text/javascript" src="{{asset('materialize/js/plugins.js')}}"></script>
+<!--custom-script.js - Add your own theme custom JS-->
+<script type="text/javascript" src="{{asset('materialize/js/custom-script.js')}}"></script>
+<!-- chartist -->
+<script type="text/javascript" src="{{asset('materialize/js/plugins/chartist-js/chartist.min.js')}}"></script>
+
+<!-- data-tables -->
+ <script type="text/javascript" src="{{asset('materialize/js/plugins/data-tables/js/jquery.dataTables.min.js')}}"></script>
+ <script type="text/javascript" src="{{asset('materialize/js/plugins/data-tables/data-tables-script.js')}}"></script>
+   
+   
+
+    {!! Html::script('assets/vendor/toastr/toastr.min.js') !!}
+    @include('common.toastr_notification')
+       {!! Html::script('assets/vendor/switch/bootstrap-switch.min.js') !!}
+  {!! Html::script('assets/vendor/password/password.js') !!}
+{!! Html::script('assets/vendor/select2/select2.min.js') !!}
+{!! Html::script('assets/vendor/icheck/icheck.min.js') !!}
+    @if(in_array('recaptcha',$assets))
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    @endif
+    
+
+@yield('scripts')
+
+{!! Html::script('assets/js/wmlab.js') !!}
+
+</body>
+
+</html>
+
