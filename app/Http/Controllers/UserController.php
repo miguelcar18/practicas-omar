@@ -34,7 +34,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-
+        
         if (!Entrust::can('manage-user'))
             return redirect('/home')->withErrors(trans('messages.permission_denied'));
 
@@ -59,19 +59,18 @@ class UserController extends Controller {
             'data' => $col_heads
         );
 
-        $assets = ['recaptcha'];
+        $assets = ['recaptcha'];        
         return view('user.index', compact('table_data', 'assets'));
     }
 
     public function lists(Request $request) {
 
         if (defaultRole())
-            $users = User::all();
+            $users = User::all();            
         else
             $users = User::whereIsHidden(0)->get();
 
         $rows = array();
-
         foreach ($users as $user) {
             $row = array(
                 '<div class="row col s5">' .
@@ -96,12 +95,11 @@ class UserController extends Controller {
 
             if (!config('config.login'))
                 array_push($row, $user->username);
+                array_push($row, $user->full_name);
 
-            array_push($row, $user->full_name);
             $user_role = '';
             foreach ($user->Roles as $role)
                 $user_role .= toWord($role->name) . ' <br />';
-
             array_push($row, $user_role);
             array_push($row, $status);
             array_push($row, showDate($user->created_at));
@@ -432,6 +430,7 @@ class UserController extends Controller {
                 'remoteip' => $request->getClientIp()
             );
             $gresponse = postCurl($url, $postData);
+
 
             if (!$gresponse['success']) {
                 if ($request->has('ajax_submit')) {

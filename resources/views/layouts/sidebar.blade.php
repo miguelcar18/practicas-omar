@@ -16,7 +16,7 @@
                                 </button>
                             </span>
                             </div>
-                        </li>
+                        </li>                        
                         <li><a href="/home"><i class="fa fa-home fa-fw"></i> {{trans('messages.home') }}</a></li>
                         @if(Entrust::can('manage-user'))
                             <li><a href="/user"><i class="fa fa-users fa-fw"></i> {{trans('messages.user') }}</a></li>

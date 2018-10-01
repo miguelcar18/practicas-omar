@@ -9,7 +9,6 @@
 </ul>
 @stop
 
-
 @section('content')
 @include('common.materialize.header-form-link',['icon' => 'mdi-image-timer-auto','url'=>'/user','buttonMessage'=>trans('messages.list_all'),'message'=>''])
 <div class="row">
@@ -86,8 +85,6 @@
             </div>
         </div>
     </div>
-
-
 
 
     <!--tab-->

@@ -296,4 +296,10 @@
   'table' => 'Table',
   'datepicker' => 'Date Picker',
   'datetimepicker' => 'Date Time Picker',
+  'code' => 'Code',
+  'owner' => 'Owner',
+  'habilitado' => 'Habilitado',
+  'deshabilitado' => 'Deshabilitado',
+  'apartment' => 'Apartment',
+
 );

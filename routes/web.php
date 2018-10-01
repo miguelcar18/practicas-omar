@@ -10,6 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+
 Route::get('/','Auth\LoginController@showLoginForm');
 Route::get('/under-maintenance','HomeController@maintenance');
 Route::get('/terms-and-conditions','HomeController@tnc');
@@ -154,3 +155,16 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 	Route::post('/change-password',array('as'=>'change-password','uses' =>'UserController@doChangePassword'));
 	Route::post('/user/email/{id}',array('as' => 'user.email', 'uses' => 'UserController@email'));
 });
+
+/*
+*	Route Apartments.
+*/
+	Route::get('/apartment/{id}/edit', 'ApartmentController@edit');
+	Route::model('apartment', '\App\Apartments');
+	Route::post('/apartment/lists', 'ApartmentController@lists');
+	Route::resource('/apartment', 'ApartmentController');
+	Route::post('/change-apartment-status','ApartmentController@changeStatus');
+
+
+//Route::post('/apartment', 'ApartmentController',['except' => ['store','edit']]);
+//Route::get('apartment.create', 'ApartmentController@create');

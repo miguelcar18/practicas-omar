@@ -12,7 +12,7 @@
 
 @section('content')
 
-@include('common.materialize.header-form-link',['icon' => 'mdi-image-timer-auto','url'=>'user/create','buttonMessage'=>trans('messages.add_new'),'message'=>''])
+@include('common.materialize.header-form-link',['icon' => 'mdi-image-timer-auto','url'=>'user/create','buttonMessage'=>trans('messages.add_new'),'message'=>'User'])
 
 @include('common.materialize.datatable',['table' => $table_data['user-table']])
 

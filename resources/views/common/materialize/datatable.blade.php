@@ -4,7 +4,7 @@
 
                 <thead>
                 <tr>
-                    @foreach($table['data'] as $col_head)
+                    @foreach($table['data'] as $col_head)                                        
                     @if($col_head == 'Option')
                     <th style="min-width:20%;">{!! $col_head !!}</th>
                     @else

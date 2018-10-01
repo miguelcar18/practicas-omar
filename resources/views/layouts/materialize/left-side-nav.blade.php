@@ -7,6 +7,7 @@
                     {!! getAvatar(Auth::user()->id,77) !!}
 
                 </div>
+
                 <div class="col col s8 m8 l8">
                     <ul id="profile-dropdown" class="dropdown-content">
                         <li><a href="user/{!! Auth::user()->id !!}"><i class="mdi-action-face-unlock"></i> Profile</a>
@@ -46,7 +47,7 @@
                     <div class="collapsible-body">
                         <ul>
                             @if(Entrust::can('manage-user'))
-                            <li><a href="user">Users</a>
+                            <li><a href="/user">Users</a>
                             </li>
                             @endif
 
@@ -54,6 +55,21 @@
                         </ul>
 
                     </div>
+                    
+                    <!-- LINEA MODIFICADA -->
+                    {{-- Modulo de Apartments --}} 
+                    <div class="collapsible-body">
+                        <ul>
+                            @if(Entrust::can('manage-user'))
+                            <li><a href="/apartment">Apartments</a>
+                            </li>
+                            @endif
+
+
+                        </ul>
+
+                    </div>
+
                 </li>
             </ul>
         </li>
